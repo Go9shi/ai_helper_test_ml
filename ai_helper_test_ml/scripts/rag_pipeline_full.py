@@ -4,9 +4,21 @@
 """
 
 import json
+import sys
 import argparse
 from pathlib import Path
 from typing import List, Dict, Any, Optional
+
+# Добавляем корневую директорию в путь для импорта
+script_dir = Path(__file__).parent.parent
+sys.path.insert(0, str(script_dir))
+
+# КРИТИЧНО: Отключаем Xet Storage ДО импорта любых модулей
+import os
+os.environ['HF_HUB_DISABLE_XET'] = '1'
+os.environ['HF_HUB_ENABLE_XET'] = '0'
+os.environ['SENTENCE_TRANSFORMERS_DISABLE_ONNX'] = '1'
+os.environ['ST_DISABLE_ONNX'] = '1'
 
 from rag_pipeline.data_cleaner import DataCleaner
 from rag_pipeline.text_chunker import TextChunker

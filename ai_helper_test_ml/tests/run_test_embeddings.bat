@@ -9,6 +9,10 @@ set HF_HUB_DISABLE_XET=1
 set HF_HUB_ENABLE_XET=0
 set HF_HUB_DISABLE_XET_WARNING=1
 
+REM Отключаем ONNX оптимизацию для избежания загрузки ONNX файлов через Xet Storage
+set SENTENCE_TRANSFORMERS_DISABLE_ONNX=1
+set ST_DISABLE_ONNX=1
+
 REM Увеличиваем таймаут загрузки до 20 минут
 set HF_HUB_DOWNLOAD_TIMEOUT=1200
 

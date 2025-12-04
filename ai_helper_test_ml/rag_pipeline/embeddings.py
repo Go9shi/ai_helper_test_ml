@@ -13,6 +13,10 @@ import logging
 os.environ['HF_HUB_DISABLE_XET'] = '1'
 os.environ['HF_HUB_ENABLE_XET'] = '0'
 
+# Отключаем ONNX оптимизацию для избежания загрузки ONNX файлов через Xet Storage
+os.environ['SENTENCE_TRANSFORMERS_DISABLE_ONNX'] = '1'
+os.environ['ST_DISABLE_ONNX'] = '1'
+
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -194,6 +198,10 @@ class SentenceTransformerEmbeddingGenerator(EmbeddingGenerator):
         
         # Дополнительные настройки для отключения Xet Storage
         os.environ['HF_HUB_DISABLE_XET_WARNING'] = '1'
+        
+        # Отключаем ONNX оптимизацию, чтобы избежать загрузки ONNX файлов через Xet Storage
+        os.environ['SENTENCE_TRANSFORMERS_DISABLE_ONNX'] = '1'
+        os.environ['ST_DISABLE_ONNX'] = '1'
         
         # Пытаемся отключить Xet Storage через huggingface_hub API
         try:

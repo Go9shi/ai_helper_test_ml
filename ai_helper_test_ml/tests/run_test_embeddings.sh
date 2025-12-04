@@ -8,6 +8,10 @@ export HF_HUB_DISABLE_XET=1
 export HF_HUB_ENABLE_XET=0
 export HF_HUB_DISABLE_XET_WARNING=1
 
+# Отключаем ONNX оптимизацию для избежания загрузки ONNX файлов через Xet Storage
+export SENTENCE_TRANSFORMERS_DISABLE_ONNX=1
+export ST_DISABLE_ONNX=1
+
 # Увеличиваем таймаут загрузки до 20 минут
 export HF_HUB_DOWNLOAD_TIMEOUT=1200
 

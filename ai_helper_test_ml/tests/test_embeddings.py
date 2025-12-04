@@ -11,6 +11,10 @@ from pathlib import Path
 os.environ['HF_HUB_DISABLE_XET'] = '1'
 os.environ['HF_HUB_ENABLE_XET'] = '0'
 
+# Отключаем ONNX оптимизацию для избежания загрузки ONNX файлов через Xet Storage
+os.environ['SENTENCE_TRANSFORMERS_DISABLE_ONNX'] = '1'
+os.environ['ST_DISABLE_ONNX'] = '1'
+
 # Добавляем корневую директорию в путь для импорта
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
