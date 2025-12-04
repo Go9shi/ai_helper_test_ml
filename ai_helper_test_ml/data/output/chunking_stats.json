@@ -1,0 +1,12 @@
+{
+  "original_records": 39,
+  "chunked_records": 39,
+  "chunks_created": 0,
+  "records_chunked": 0,
+  "records_unchanged": 39,
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "min_chunk_size": 79,
+  "max_chunk_size": 129,
+  "avg_chunk_size": 95.97435897435898
+}

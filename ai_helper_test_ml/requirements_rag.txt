@@ -1,0 +1,20 @@
+# Базовые зависимости
+pandas>=2.0.0
+
+# Для генерации эмбеддингов
+openai>=1.0.0  # Для OpenAI embeddings
+sentence-transformers>=2.2.0  # Для локальных эмбеддингов
+
+# Для векторных БД
+pinecone-client>=3.0.0  # Для Pinecone
+qdrant-client>=1.7.0  # Для Qdrant
+
+# Для LLM интеграции
+anthropic>=0.18.0  # Для Claude (опционально)
+
+# Для работы с данными
+numpy>=1.24.0
+
+# Для обработки текста
+regex>=2023.0.0
+
